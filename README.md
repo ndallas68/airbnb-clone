@@ -6,6 +6,7 @@ First, run the development server:
 
 ```bash
 npm run dev
+npm install react-icons
 # or
 yarn dev
 # or
