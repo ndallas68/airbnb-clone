@@ -10,7 +10,7 @@ import ToasterProvider from "./components/providers/ToasterProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Airbnb",
+  title: "Project Initial",
   description: "Airbnb clone",
 };
 

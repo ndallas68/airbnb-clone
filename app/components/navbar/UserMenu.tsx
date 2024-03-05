@@ -32,7 +32,7 @@ const UserMenu = () => {
                         cursor-pointer
                     "
                 >
-                    List Your Rental
+                    List a Space
                 </div>
                 <div
                     onClick={toggleOpen}
