@@ -7,6 +7,11 @@ First, run the development server:
 ```bash
 npm run dev
 npm install react-icons
+npm install zustand
+npm install axios
+npm install react-hook-form
+npm install react-hot-toast
+
 # or
 yarn dev
 # or
