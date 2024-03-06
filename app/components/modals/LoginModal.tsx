@@ -21,11 +21,13 @@ import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../inputs/Input';
 import Button from '../Button';
-import Facebook from 'next-auth/providers/facebook';
 
 const LoginModal = () => {
     const router = useRouter();
+
+    const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
+
     const [isLoading, setIsLoading] = useState(false);
 
     const {
@@ -62,6 +64,11 @@ const LoginModal = () => {
             }
         })
     }
+
+    const toggle = useCallback(() => {
+        loginModal.onClose();
+        registerModal.onOpen();
+    }, [loginModal, registerModal]);
 
     const bodyContent = (
         <div className="flex flex-col gap-4">
@@ -119,17 +126,17 @@ const LoginModal = () => {
         >
             <div className="justify-center flex flex-row items-center gap-2">
                 <div>
-                   Already have an account? 
+                   First time using Matadoor? 
                 </div>
                 <div
-                    onClick={loginModal.onClose}
+                    onClick={toggle}
                     className="
                         text-neutral-800
                         cursor-pointer
                         hover:underline
                     "
                 >
-                   Log in
+                   Sign up
                 </div>
             </div>
         </div>

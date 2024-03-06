@@ -175,7 +175,7 @@ const Modal: React.FC<ModalProps> = ({
                                         w-full
                                     "
                                 >
-                                    {!secondaryAction && secondaryActionLabel && (
+                                    {secondaryAction && secondaryActionLabel && (
                                     <Button
                                         outline
                                         disabled={disabled}
