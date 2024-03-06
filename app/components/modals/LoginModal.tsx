@@ -3,6 +3,7 @@
 import { signIn } from 'next-auth/react';
 import axios from 'axios';
 import { AiFillGithub } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from 'react';
 import {
@@ -20,6 +21,7 @@ import Modal from './Modal';
 import Heading from '../Heading';
 import Input from '../inputs/Input';
 import Button from '../Button';
+import Facebook from 'next-auth/providers/facebook';
 
 const LoginModal = () => {
     const router = useRouter();
@@ -93,13 +95,19 @@ const LoginModal = () => {
                 outline
                 label="Continue with Google"
                 icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => signIn('google')}
+            />
+            <Button
+                outline
+                label="Continue with Facebook"
+                icon={FaFacebook}
+                onClick={() => signIn('facebook')}
             />
             <Button
                 outline
                 label="Continue with Github"
                 icon={AiFillGithub}
-                onClick={() => {}}
+                onClick={() => signIn('github')}
             />
             <div
             className="

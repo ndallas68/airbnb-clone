@@ -2,6 +2,7 @@
 
 import axios from 'axios';
 import { AiFillGithub } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from 'react';
 import {
@@ -10,6 +11,7 @@ import {
     useForm
 } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { signIn } from 'next-auth/react';
 
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import Modal from './Modal';
@@ -90,13 +92,19 @@ const RegisterModal = () => {
                 outline
                 label="Continue with Google"
                 icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => signIn('google')}
+            />
+            <Button
+                outline
+                label="Continue with Facebook"
+                icon={FaFacebook}
+                onClick={() => signIn('facebook')}
             />
             <Button
                 outline
                 label="Continue with Github"
                 icon={AiFillGithub}
-                onClick={() => {}}
+                onClick={() => signIn('github')}
             />
             <div
             className="
