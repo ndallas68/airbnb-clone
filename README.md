@@ -13,11 +13,12 @@ npm install react-hook-form
 npm install react-hot-toast
 npm install -D prisma
     npx prisma init
-        # after linking mongodb in .env and creating the schema
+        # after linking mongodb in .env and creating/linking the schema
         npx prisma db push
         npm install next-auth @prisma/client @next-auth/prisma-adapter
         npm install bcrypt
         npm install -D @types/bcrypt
+npm install query-string
 
 # or
 yarn dev
