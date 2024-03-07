@@ -24,6 +24,8 @@ npm install react-select
 npm install leaflet
 npm install -D @types/leaflet
 npm install react-leaflet
+# create cloudinary account for free and grab key/secret
+npm install next-cloudinary
 
 # or
 yarn dev
