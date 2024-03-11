@@ -26,6 +26,9 @@ npm install -D @types/leaflet
 npm install react-leaflet
 # create cloudinary account for free and grab key/secret
 npm install next-cloudinary
+npm install date-fns
+npm install react-date-range
+npm install -D @types/react-date-range
 
 # or
 yarn dev
