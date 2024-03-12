@@ -11,6 +11,7 @@ import useRentModal from '@/app/hooks/useRentModal';
 
 import { signOut } from 'next-auth/react';
 import { SafeUser } from '@/app/types';
+import NeumophismButton from '../NeumorphismButton';
 
 interface UserMenuProps {
     currentUser?: SafeUser | null
@@ -39,7 +40,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
     return (
         <div className="relative">
             <div className="flex flex-row items-center gap-3">
-                <div
+                {/* <div
                     onClick={onRent}
                     className="
                         hidden
@@ -55,25 +56,46 @@ const UserMenu: React.FC<UserMenuProps> = ({
                     "
                 >
                     Rent your home
-                </div>
+                </div> */}
+                <NeumophismButton 
+                    onClick={onRent}
+                    label="List a property"
+                />
                 <div
-                    onClick={toggleOpen}
-                    className="
-                        p-4
-                        md:py-1
-                        md:px-2
-                        border-[1px]
-                        border-neutral-200
-                        flex
-                        flex-row
-                        items-center
-                        gap-3
-                        rounded-full
-                        cursor-pointer
-                        hover:shadow-md
-                        transition
-                    "
-                >
+                //     onClick={toggleOpen}
+                //     className="
+                //         p-4
+                //         md:py-1
+                //         md:px-2
+                //         border-[1px]
+                //         border-neutral-200
+                //         flex
+                //         flex-row
+                //         items-center
+                //         gap-3
+                //         rounded-full
+                //         cursor-pointer
+                //         hover:shadow-md
+                //         transition
+                //     "
+                        onClick={toggleOpen}
+                        className="
+                            px-4
+                            py-2
+                            rounded-full
+                            flex
+                            items-center
+                            gap-2
+                            text-slate-500
+                            shadow-[-5px_-5px_10px_rgba(255,_255,_255,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
+
+                            cursor-pointer
+                            transition-all
+
+                            hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
+                            hover:text-rose-500
+                        "
+                 >
                     <AiOutlineMenu />
                     <div className="hidden md:block">
                         <Avatar src={currentUser?.image}/>

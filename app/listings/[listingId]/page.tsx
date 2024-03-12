@@ -3,6 +3,7 @@ import getListingById from "@/app/actions/getListingById";
 import ClientOnly from "@/app/components/ClientOnly";
 import EmptyState from "@/app/components/navbar/EmptyState";
 import ListingClient from "./ListingClient";
+import getLeases from "@/app/actions/getLeases";
 
 interface IParams {
     listingId?: string;
@@ -10,6 +11,7 @@ interface IParams {
 
 const ListingPage = async ({ params }: { params: IParams }) => {
     const listing = await getListingById(params);
+    const leases = await getLeases(params);
     const currentUser = await getCurrentUser();
 
     if (!listing) {
@@ -24,6 +26,7 @@ const ListingPage = async ({ params }: { params: IParams }) => {
         <ClientOnly>
             <ListingClient 
                 listing={listing}
+                leases={leases}
                 currentUser={currentUser}
             />
         </ClientOnly>
